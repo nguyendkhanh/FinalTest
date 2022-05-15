@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
 //         PRIVATE_KEY            = credentials('privatekey')
-        DOCKER_IMAGE = "thang13199/nginx-${GIT_BRANCH.tokenize('/').pop()}"
+        DOCKER_IMAGE = "nguyendkhanh23/nginx-${GIT_BRANCH.tokenize('/').pop()}"
         DOCKERHUB_CREDENTIALS = 'docker-hub-account'
     }
     stages {
