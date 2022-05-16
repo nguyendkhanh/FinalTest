@@ -40,7 +40,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-hub-account', usernameVariable: 'DOCKER_HUB_USERNAME', passwordVariable: 'DOCKER_HUB_PASSWORD')]) {
                     ansiblePlaybook(
-                            credentialsId: 'fsoft-ctc',
+                            credentialsId: 'private_key',
                             playbook: 'playbook.yml',
                             inventory: 'hosts',
                             become: 'yes',
@@ -61,7 +61,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-hub-account', usernameVariable: 'DOCKER_HUB_USERNAME', passwordVariable: 'DOCKER_HUB_PASSWORD')]) {
                     ansiblePlaybook(
-                            credentialsId: 'fsoft-ctc',
+                            credentialsId: 'private_key',
                             playbook: 'develop/playbook.yml',
                             inventory: 'hosts',
                             become: 'yes',
