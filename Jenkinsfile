@@ -36,7 +36,7 @@ pipeline {
             options {
                 timeout(time: 10, unit: 'MINUTES')
             }
-            when { expression {env.GIT_BRANCH == 'origin/master'}}
+            when { expression {env.GIT_BRANCH == 'origin/main'}}
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-hub-account', usernameVariable: 'DOCKER_HUB_USERNAME', passwordVariable: 'DOCKER_HUB_PASSWORD')]) {
                     ansiblePlaybook(
